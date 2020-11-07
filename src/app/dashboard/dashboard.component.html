@@ -1,0 +1,12 @@
+<div class="dash">
+    <div class="card shadow border-radius-0">
+        <div class="bg-dark">
+            <h1 class="d-inline-flex ml-2 text-light">Dashboard</h1>
+        </div>
+        <div class="card-body">
+            <mat-nav-list>
+                <a mat-list-item *ngFor="let item of child" [routerLink]="item.navlink">{{item.displayName}}</a>
+            </mat-nav-list>
+        </div>
+    </div>
+</div>
