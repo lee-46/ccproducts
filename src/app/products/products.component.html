@@ -1,1 +1,17 @@
-<p>products works!</p>
+<div [class]="action == 'view' ? 'products' : 'editproducts'">
+    <div class="card shadow br-0">
+        <div class="bg-dark p-2">
+            <img src="./assets/icon_find_a_credit_card_2x_95x70.png" width="30" height="30"
+                class="mr-1 mb-2 float-left">
+            <h1 class="d-inline-flex ml-2 text-light"> Products</h1>
+            <button *ngIf="action == 'modify' && _profileService.isAdmin" mat-flat-button class="float-right mr-1"
+                (click)="addCard()">
+                Add New Card</button>
+        </div>
+    </div>
+    <div class="mb-2"></div>
+    <div class="mb-4" *ngFor="let product of products; let i=index">
+        <app-creditcard [card]="product" [index]="i" [action]="action" (delete)="deleteCard($event)"
+            (edited)="onCardEdit($event)"></app-creditcard>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   child: ChildList[] = [
-    { navlink: "/products", displayName: "Products" }
+    { navlink: ["/products", 'view'], displayName: "View All Products", display: this._profileService.isLogged },
+    { navlink: ["/products", 'modify'], displayName: "Add/Modify Products", display: this._profileService.isLogged && this._profileService.isAdmin }
   ];
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private _profileService: ProfileService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +26,7 @@ export class DashboardComponent implements OnInit {
 }
 
 export interface ChildList {
-  navlink: string;
+  navlink: string[];
   displayName: string;
+  display: boolean;
 } 

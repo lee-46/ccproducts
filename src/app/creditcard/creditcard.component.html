@@ -1,1 +1,39 @@
-<p>creditcard works!</p>
+<!--Template for View actions-->
+<div class="card p-2" *ngIf="action == 'view'">
+    <div class="card-body">
+        <div class="card-title">
+            {{card.Name}}
+        </div>
+        <div class="row"></div>
+        <mat-grid-list cols="2" rowHeight="45px">
+            <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.colspan" [rowspan]="tile.rowspan">
+                {{tile.text}}
+                <img *ngIf="tile.isImg && (index % 2 == 0)" src="./assets/EMV-Card-1.jpg">
+                <img *ngIf="tile.isImg && (index % 2 == 1)" src="./assets/EMV-Card-2.jpg">
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
+
+<!--Template for Add, Update & Delete actions-->
+<div class="card p-2" *ngIf="action == 'modify' && _profileService.isAdmin">
+    <div class="card-body">
+        <div class="card-title">
+            {{card.Name}}
+        </div>
+        <div class="row"></div>
+        <mat-grid-list cols="3" rowHeight="35px">
+            <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.colspan" [rowspan]="tile.rowspan">
+                {{tile.text}}
+            </mat-grid-tile>
+        </mat-grid-list>
+        <div class="row">
+            <div class="col-md-12">
+                <button mat-flat-button color="warn" class="float-right" (click)="onDelete()">
+                    Delete</button>
+                <button mat-flat-button color="accent" class="float-right mr-1" (click)="onEdit()">
+                    Edit</button>
+            </div>
+        </div>
+    </div>
+</div>

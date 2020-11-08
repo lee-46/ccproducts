@@ -10,6 +10,7 @@ html, body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: 1px !important;
 }
 
 .mat-body, .mat-body-1, .mat-typography {
@@ -17,15 +18,81 @@ body {
     letter-spacing: 1px;
 }
 
-.mat-form-field {
-    letter-spacing: 1px;
+.mat-form-field, .mat-h1, .mat-headline, .mat-typography h1, .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    letter-spacing: 1px !important;
+}
+
+.mat-h1, .mat-headline, .mat-typography h1 {
+    margin: 0px !important;
 }
 
 .mat-card {
     border-radius: 0 !important;
 }
 
-.dash {
+.br-0 {
+    border-radius: 0 !important;
+}
+
+.dashboard .card {
+    background-color: #212529!important;
+    opacity: 0.89;
+    padding: 40px;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: 200;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.dashboard .card:hover {
+    background-color: #495057 !important;
+    transform: translate(0px, -2px);
+    box-shadow: 0px 0px 14px #efefef;
+}
+
+.top-90 {
+    top: 90px;
+}
+
+.mat-grid-tile {
+    font-size: 14px;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.products .card {
+    box-shadow: 1px 1px 0px #efefef;
+    border-radius: 0 !important;
+}
+
+.products .card:hover, #cardgrp button:hover, .editproducts button:hover {
+    transform: translate(0px, -2px);
+    box-shadow: 0px 0px 14px #efefef;
+}
+
+.card-title {
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+mat-grid-tile img {
+    max-width: 300px;
+}
+
+.mat-grid-tile .mat-figure {
+    justify-content: unset !important;
+}
+
+.cdk-overlay-container .cdk-overlay-pane {
+    margin-top: 35px !important;
+}
+
+/* .dash {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,4 +107,4 @@ body {
 
 .dash .card-body {
     padding: 0px;
-}
+} */

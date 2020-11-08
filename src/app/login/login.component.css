@@ -24,6 +24,14 @@ justify-content-center d-flex mt-3
     letter-spacing: 1px;
 }
 
+.login h1 {
+    margin-left: 4px !important;
+}
+
+.login .mat-hint {
+    font-size: 75%;
+}
+
 .loginc {
     width: auto;
     min-width: 300px;
