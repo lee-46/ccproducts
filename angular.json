@@ -127,7 +127,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "ccproducts"
+            "baseHref": "https://lee-46.github.io/ccproducts/"
           }
         }
       }
